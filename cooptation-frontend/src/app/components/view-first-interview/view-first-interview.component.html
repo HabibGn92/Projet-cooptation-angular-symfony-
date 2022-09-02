@@ -1,0 +1,227 @@
+<div class="col-sm-6 p-md-0" >
+    <div class="welcome"  style="margin-left: 50px ; padding-top:20px " >
+        <h4 style="color:#006dbf">COMPTE RENDU DE L’ENTRETIEN</h4>
+    </div>
+  </div>
+<div class="row" id="form_container">
+    <div class="col-lg-12">
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" action="#" method="post" [formGroup]="angForm" novalidate>
+                        <div class="row  form-row ">
+                            <div class="col-xl-6 col-sm-12">
+                                    <div class="form-group row">
+                                        <label class="col-xl-4 col-lg-4 col-form-label " id="interview_date_label" >Date de l'entretien
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-xl-6 col-lg-12 datedentretient">
+                                            <input type="date" class="form-control " id="interview_date"  formControlName="interview_date"  > 
+                                               <div *ngIf="angForm.controls['interview_date'].invalid && (angForm.controls['interview_date'].dirty || angForm.controls['interview_date'].touched || saveClicked)" class="text-danger fs-13 mt-1" style="margin-bottom:1rem;">
+                                                 <div *ngIf="angForm.controls['interview_date'].errors.required" class="interview_date" >
+                                                    Champ obligatoire
+                                                  </div>
+                                                 <div *ngIf="angForm.controls['interview_date'].errors.invalidDate">
+                                                    Entrer une date valide
+                                                  </div>
+                                               </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-xl-4 col-lg-4 col-form-label datedentretient" for="interview_type" id="interview_date_label">Type d'entretien
+                                    </label>
+                                    <div class=" col-xl-6 col-lg-12 ">
+                            
+                                        <select class="form-control " id="interview_type" formControlName="interview_type"  >
+                                            <option value="rdv_cooptation" selected>RDV cooptation</option>
+                                            <option value="others">Autres</option>
+                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  form-row ">
+                                 <div class="col-xl-6 col-sm-12">
+                                    <div class="form-group row ">
+                                        <label class="col-xl-4 col-lg-4  col-form-label ">Rémunération actuelle </label>
+                                        
+                                        <div class="input-group mb-3 col-xl-3 col-lg-12 datedentretient" style="display:flex ;flex-direction:column;">
+                                            <div style="display: flex;">
+                                                <input type="text" class="form-control " id="actual_salary" placeholder="Fixe" formControlName="currentsalary"  >
+                                                <span class="input-group-text ">dt</span>
+                                            </div>
+                                            <div *ngIf="angForm.controls['currentsalary'].invalid && (angForm.controls['currentsalary'].dirty || saveClicked )" class="text-danger fs-13 mt-1">
+                                                <div *ngIf="angForm.controls['currentsalary'].errors">
+                                                Entrer un salaire valide
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 col-xl-3 col-lg-12" style="display:flex ;flex-direction:column;" >
+                                            <div style="display: flex;">
+                                                <input  type="text" class="form-control " id="actual_salary" placeholder="Variable" formControlName="variable_currentsalary"  >
+                                                <span class="input-group-text ">dt</span>
+                                            </div>
+                                            <div *ngIf="angForm.controls['variable_currentsalary'].invalid && (angForm.controls['variable_currentsalary'].dirty || saveClicked )" class="text-danger fs-13 mt-1">
+                                                <div *ngIf="angForm.controls['variable_currentsalary'].errors">
+                                                Entrer un salaire valide
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                   
+                           
+                                <div class="col-xl-6">
+                                    <div class="form-group row ">
+                                        <label class="col-xl-4 col-lg-4  col-form-label datedentretient"  >Rémunération souhaitée
+                                        </label> 
+                                        <div class="input-group mb-3 col-xl-3 col-lg-12" style="display:flex ;flex-direction:column;">
+                                            <div style="display: flex;">
+                                                <input type="text" class="form-control " id="actual_salary" placeholder="Fixe"
+                                                    formControlName="desiredsalary"  >
+                                                    <span class="input-group-text ">dt</span>
+                                            </div>
+                                            <div *ngIf="angForm.controls['desiredsalary'].invalid && (angForm.controls['desiredsalary'].dirty || saveClicked )" class="text-danger fs-13 mt-1">
+                                                <div *ngIf="angForm.controls['desiredsalary'].errors">
+                                                    Entrer un salaire valide
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 col-xl-3 col-lg-12" style="display:flex ;flex-direction:column;">
+                                            <div style="display: flex;">
+                                                <input type="text" class="form-control " id="actual_salary" placeholder="Variable"
+                                                    formControlName="variable_desiredsalary"  >
+                                                <span class="input-group-text ">dt</span>
+                                            </div>
+                                            <div *ngIf="angForm.controls['variable_desiredsalary'].invalid && (angForm.controls['variable_desiredsalary'].dirty || saveClicked )" class="text-danger fs-13 mt-1">
+                                                <div *ngIf="angForm.controls['variable_desiredsalary'].errors">
+                                                Entrer un salaire valide
+                                                    </div>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </div>
+                            </div> 
+                          
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-xl-2 col-lg-4 col-form-label" id="interview_date_label2">L'expérience</label>
+                                        <div class="col-xl-9 col-lg-12 datedentretient" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="experience"  ></textarea>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row" >
+                                        <label for="exampleFormControlTextarea1" class="col-xl-2 col-lg-4 col-form-label" id="interview_date_label2" >La personnalité</label>
+                                        <div class="col-xl-9 col-lg-12 datedentretient" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="character" rows="4"  ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-xl-2 col-lg-4 col-form-label" id="interview_date_label2">Les compétences</label>
+                                        <div class="col-xl-9 col-lg-12 datedentretient" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="skills"  ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-xl-2 col-lg-4 col-form-label" id="interview_date_label2" >Commentaires
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        
+                                        <div class="col-xl-9 col-lg-12 datedentretient" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="comments"  ></textarea>
+                                            <div *ngIf="angForm.controls['comments'].invalid && (angForm.controls['comments'].dirty || angForm.controls['comments'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                                <div *ngIf="angForm.controls['comments'].errors.required">
+                                                Champ obligatoire
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-sm-6 p-md-0" >
+                <div class="welcome"  style="margin-left: 50px ; padding-top:20px " >
+                    <h4 style="color:#006dbf">PRÉSENTATION DE L'ENTREPRISE AU COOPTÉ</h4>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="form-valide" action="#" method="post" [formGroup]="angForm" novalidate>
+                            <div class="row">
+                                <div class="col-xl-5">
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les domaines d'activité</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="fildesofactivity" >
+                                                        <mat-radio-button class="mr-3" value="1" (change)="onFieldActivitiesChange($event)" >Oui</mat-radio-button>
+                                                        <mat-radio-button value="0" (change)="onFieldActivitiesChange($event)" >Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                            </div>
+                                        </div> 
+                                    </div>
+                               
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les chiffres Clefs</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="keyfiguers">
+                                                        <mat-radio-button class="mr-3 " value="1" (change)="onKeyValuesChange($event)" >Oui</mat-radio-button>
+                                                        <mat-radio-button  value="0" (change)="onKeyValuesChange($event)">Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                             </div>
+                                        </div> 
+                                    </div>     
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les valeurs de Talan</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="values">
+                                                        <mat-radio-button class="mr-3" value="1" (change)="onValuesChange($event)"  >Oui</mat-radio-button>
+                                                        <mat-radio-button value="0" (change)="onValuesChange($event)" >Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                             </div>
+                                        </div> 
+                                    </div>
+                                </div>    
+                                    <div class="col-xl-7">
+                                        <div class="col-xl-12">
+                                            <div class="form-group row">
+                                                <label for="exampleFormControlTextarea1" class="col-xl-2 col-lg-4 col-form-label" id="interview_date_label2">Commentaires</label> 
+                                                <div class="col-xl-9 col-lg-12" >
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" formControlName="secondcomments"  ></textarea>
+                                                </div>    
+                                             </div>
+                                    </div>
+                                </div>   
+                            </div>       
+                        </form>                        
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+

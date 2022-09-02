@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-lg-12">
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" action="#" method="post" [formGroup]="angForm" novalidate>
+                        <div class="form-row">
+                          <div class="col-xl-6">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="civility">Civilité
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                        <div class="col-lg-6  civilitycheck" > 
+                                        <mat-radio-group aria-label="Select an option" formControlName="civility">
+                                            <mat-radio-button class="mr-3 " value="Homme" (change)="onCheckChange($event)">M</mat-radio-button>
+                                            <mat-radio-button  value="Femme" (change)="onCheckChange($event)">Mme</mat-radio-button>
+                                        </mat-radio-group>
+                                        <div *ngIf="angForm.controls['civility'].invalid && (angForm.controls['civility'].dirty || angForm.controls['civility'].touched || saveClicked)" 
+                                        class="text-danger fs-13 mt-1">
+                                            <div *ngIf="angForm.controls['civility'].errors.required" >
+                                                Champ obligatoire
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="cv">CV <span
+                                        class="text-danger">*</span>
+                                    </label> 
+                                    <div class="CVcheck" >
+                                        <div class="col-lg-1 cvFlex" >  
+                                            <button  class="bi bi-cloud-download" type="button"  style="width:20px ;height:20px ;border:none; color:none; background-color: none;">
+                                                <input #fileInput  (change)="onFileSelected($event)" type="file" style="display:none; margin-right: 2rem;" formControlName="cv"  />
+                                            </button> 
+                                            <label class="labelCv" [ngStyle]="{'display': ((files.length)==0)? 'none' : 'block'}" (click)="downloadCV(Name)">{{Name}}</label>
+                                            <label class="labelCv" [ngStyle]="{'display': ((files.length)==1)? 'none' : 'block'}" (click)="downloadCV(FileName)">{{FileName}}</label>
+                                        </div>  
+                                        
+                                        <div *ngIf="angForm.controls['cv'].invalid && (angForm.controls['cv'].dirty || angForm.controls['cv'].touched || saveClicked) " 
+                                        class="text-danger fs-13 mt-1" style="margin-bottom:1rem !important">
+                                            <div *ngIf="angForm.controls['cv'].errors.required "  style="margin-bottom:1rem !important ; margin-top: 1rem !important;">
+                                                Champ obligatoire
+                                            </div>
+                                        </div>
+                                    </div>           
+                                </div>
+                            </div>  
+                            <div class="col-xl-6">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label Nom" for="username">Nom
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="username" formControlName="username" >
+                                        <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched || saveClicked)" 
+                                        class="text-danger fs-13 mt-1">
+                                            <div *ngIf="angForm.controls['username'].errors.required">
+                                                Champ obligatoire
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label Nom" for="lastname">Prénom
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="lastname" formControlName="lastname" >
+                                        <div *ngIf="angForm.controls['lastname'].invalid && (angForm.controls['lastname'].dirty || angForm.controls['lastname'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                            
+                                            <div *ngIf="angForm.controls['lastname'].errors.required">
+                                            Champ obligatoire
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label Nom" for="email">Email <span
+                                        class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" id="email" formControlName="email">
+                                        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                            <div *ngIf="angForm.controls['email'].errors.required">
+                                                Champ obligatoire
+                                            </div>
+                                            <div *ngIf="angForm.controls['email'].errors.pattern">
+                                                Entrer une addresse email valide.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label Nom" for="phone">Téléphone
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-8">
+                                        <div class="input-group mb-3" style="margin-bottom:0% !important; padding-bottom: 0% !important;">
+                                            <span class="input-group-text" id="basic-addon3">+216</span>
+                                            <input type="text" class="form-control" id="phone" placeholder=" - -   - - -   - - - " formControlName="phone">
+                                        </div>
+                                        <div *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                            <div *ngIf="angForm.controls['phone'].errors.required">
+                                                Champ obligatoire
+                                            </div>
+                                            <div *ngIf="angForm.controls['phone'].errors.pattern || angForm.controls['phone'].errors.minlength || angForm.controls['phone'].errors.maxlength">
+                                                Entrer un numéro valide.
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
+

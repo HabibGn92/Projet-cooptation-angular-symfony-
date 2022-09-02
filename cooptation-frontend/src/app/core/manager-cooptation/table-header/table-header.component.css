@@ -1,0 +1,115 @@
+
+
+#cooptation_container {
+ 
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 102.5px auto 0px;
+
+    /* width: 95.5% */
+}
+
+
+.cooptationsBar{
+    background: #006dbf;  /* fallback for old browsers */      
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center ;
+    justify-content: left;
+    padding-left:20px;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}     
+h4{
+    align-self: center;
+}
+h5{
+    margin-top: 0 !important;
+}
+.container-fluid{
+    padding-left: 0%;
+        padding-right: 0%;
+}
+
+  h4 {
+      align-self: center;
+      color: aliceblue;
+      font-size: 20px;
+  }
+
+.container-fluid {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+
+
+        .btn-coop {
+            width: 110px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            margin-top: 20px;
+    
+        }
+    
+        .btn-coop-2 {
+            width: 100px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 0.5rem;
+    
+        }
+    
+.table-tabs .nav-tabs .nav-link{
+    padding: 25px 20px 20px 18px;
+
+}
+.table-tabs .nav-tabs .nav-link.active {
+  
+
+    background: linear-gradient(to left, #fdffff, #73b5ee);
+
+    
+}
+   .btn-primary {
+background-color: rgb(99, 196, 39);
+border-color: rgb(99, 196, 39);
+height: 50px;
+width: 50px;
+display: flex;
+justify-content: center;
+align-items: center;}
+
+  @media screen and (max-width: 1024px) {
+
+      .btn-primary {
+          width: 40px;
+          height: 40px;
+
+      }
+
+      .card-header {
+
+          margin-right: 1rem;
+      }
+
+      .card {
+          margin-right: 2rem;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+
+   .btn-primary{
+    width: 40px;
+    height: 40px;
+
+  }
+
+
+  }

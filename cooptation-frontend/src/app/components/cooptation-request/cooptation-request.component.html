@@ -1,0 +1,59 @@
+<app-cooptations-header></app-cooptations-header>
+
+<div id="cooptation_container">
+    <div class="container-fluid">
+        <div class="cooptationsBar">
+            <h4 style="color: aliceblue; font-size:20px;">DEMANDE DE COOPTATION</h4>
+        </div>
+        </div>
+    <div id="admin_container">
+   
+    </div>
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Identité et contact">
+            <ng-template mat-tab-label >
+               <h5>Identité et contact</h5> 
+                <i *ngIf="firstForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+                <app-identity-coopted-form [angForm] = "firstForm" [saveClicked]="saveClicked" (newItemEvent) = "getUplodedFile($event)" (ItemEvent) = "getCivility($event)" ></app-identity-coopted-form>
+        </mat-tab>
+        <mat-tab label="Information du coopté">
+            <ng-template mat-tab-label>
+                <h5>Information du coopté</h5>
+               
+                <i *ngIf="secondForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+            <app-information-coopte-form [cooptationForm] = "secondForm" [saveClicked]="saveClicked" (newItemEvent) = "getEntityChanges($event)" ></app-information-coopte-form>
+        </mat-tab>
+        <mat-tab label="Mon premier entretien">
+            <ng-template mat-tab-label>
+                <h5>Mon premier entretien</h5>
+               
+                <i *ngIf="thirdForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+            <app-first-interview-form [angForm] = "thirdForm" [saveClicked]="saveClicked"  (fieldActivitiesEvent) ="getFieldActivities($event)" (keyValuesEvent) ="getKeyValues($event)" (valuesEvent)="getValues($event)"  ></app-first-interview-form>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<div class="col-lx-6">
+    <div class="card-body">
+         <button type="button" class="btn" style="background-color: rgb(99, 196, 39);color:white" (click)="submitClick()"  >Soumettre</button>
+         <button type="button" class="btn"  style=" background: rgba(176, 175, 175, 0.651);color:white ; border-color:rgba(150, 146, 146, 0.534) ;width :200px" (click)="cancelClick()" >Annuler</button>
+         <button type="button" class="btn" style=" background:#006dbf ;color:white ;" (click)="saveClick()">Enregistrer</button>
+    </div>
+</div>
+
+    <ngx-alerts></ngx-alerts>
+
+    
+    
+   
+
+ 
+
+
+
+
+
+
+

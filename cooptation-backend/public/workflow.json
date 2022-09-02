@@ -1,0 +1,54 @@
+{
+    "1": {
+        "2":"En attende de validation"
+    },
+
+    "2":{
+        "3":"Rejeter | Cooptation incomplète",
+        "4":"Rejeter | Non adapté à nos métiers",
+        "5":"Valider"
+    },
+
+    "5": {
+        "4":"Rejeté | Non adapté à nos métiers",
+        "6":"Désistement en cours de process",
+        "7":"Négatif",
+        "8":"En cours d'évaluation - RDV MNG 1"  
+    },
+
+    "8": {
+        "4":"Rejeté | Non adapté à nos métiers",
+        "6":"Désistement en cours de process",
+        "7":"Négatif",
+        "9":"En cours d'évaluation - RDV MNG 2"
+    },
+
+    "9" : {
+        "4":"Rejeté | Non adapté à nos métiers",
+        "6":"Désistement en cours de process",
+        "7":"Négatif",
+        "10":"Vivier",
+        "11":"Proposition signé"
+    },
+
+    "11":{
+        "12":"Contrat signé",
+        "13":"Désistement après proposition"
+    },
+
+    "12":{
+        "14":"Désistement après signature",
+        "15":"Embauché | PE à confirmer"
+    },
+
+    "15":{
+        "16":"Embauché | PE renouvelée confirmée",
+        "17":"Embauché | PE confirmée"
+    },
+    
+    "16":{
+        "7":"Négatif",
+        "17":"Embauché | PE confirmée"
+    }
+}
+

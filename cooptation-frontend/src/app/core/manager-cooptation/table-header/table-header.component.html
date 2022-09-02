@@ -1,0 +1,82 @@
+<app-cooptations-header></app-cooptations-header>
+
+<div id="cooptation_container">
+    <div class="container-fluid">
+        <div class="cooptationsBar">
+            <h4 style="color: aliceblue; font-size:20px;">COOPTATIONS DU PÔLE {{(pole$ | async)}}</h4>
+        </div>
+       
+    </div>
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card bg-transparent shadow-none">
+
+                    <div class="card-header flex-wrap border-0 p-0 justify-content-start">
+                        <div class="table-tabs mr-2 mb-3 mr-auto" style="margin-top: 2rem;">
+
+                            <ul class="nav nav-tabs" ngbNav #nav="ngbNav" role="tablist">
+                                <li class="nav-item" ngbNavItem="AllStatus">
+                                    <a class="nav-link" data-toggle="tab" href="#AllStatus" aria-expanded="false"
+                                        ngbNavLink (click)="changeType('all')">
+                                    <h5 >Toutes les cooptations</h5>
+                                    </a>
+                                    <ng-template ngbNavContent>
+                                        <div class="tab-pane fade active show" id="AllStatus" style="border:  1px rgb(221, 221, 221) solid;   box-shadow: 5px 10px 18px #888888;">
+                                            <div class="table-responsive rounded">
+                                                <app-manager-pole-cooptation></app-manager-pole-cooptation>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </li>
+                                <li class="nav-item" ngbNavItem="NewOrder" >
+                                    <a class="nav-link" data-toggle="tab" href="#NewOrder" aria-expanded="false"
+                                        ngbNavLink (click)="changeType('toValidate')">
+                                        <h5>Cooptations à valider</h5>
+                                    </a>
+                                    <ng-template ngbNavContent>
+                                        <div class="tab-pane" id="NewOrder" style="border:  1px rgb(221, 221, 221) solid;   box-shadow: 5px 10px 18px #888888;">
+                                            <div class="table-responsive rounded ">
+                                                <app-manager-cooptation></app-manager-cooptation>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </li>
+                            </ul>
+                        </div>
+                            <button class="btn btn-primary " [routerLink]="['/cooptation']" ><i class="fa fa-plus"
+                                    aria-hidden="true" style="color:white"></i></button>
+
+
+                                    <div class="btn-cooptation" style="margin-bottom: 1rem; margin-left:0.5rem ; height: 50px; width: 50px;" >
+
+                                        <div class="dropdown ml-auto dropdown-no-icon" ngbDropdown style="align-self: flex-end">
+                                    <a class="btn-link btn btn-primary btn sharp "
+                                        style=" padding : 0.2px ; padding-top: 0.2px ; background-color:white; border-color: white" data-toggle="dropdown"
+                                        ngbDropdownToggle >
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="40px"
+                                            viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="12" cy="5" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="19" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                                        <a class="dropdown-item text-black" (click)="exportBoth()" >
+                                            Exporter
+                                        </a>
+                                    </div>
+
+                                        </div>
+                                    </div>
+                                    
+                    </div>
+                    <div [ngbNavOutlet]="nav" class=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,75 @@
+<app-cooptations-header></app-cooptations-header>
+
+<div id="cooptation_container">
+  <div class="loading" *ngIf="!poles" style="margin-top:50px ;">
+    <div *ngIf="!poles" class="spinner-border" role="status" >
+        <span class="sr-only" style="margin-top:60px ;">Loading...</span>
+    </div>
+    <p *ngIf="!poles" style="margin-left:20px ;margin-top:20px;">Chargement de données</p>
+    </div>
+    <div class="container-fluid" *ngIf="poles">
+        <div class="cooptationsBar">
+            <h4 style="color: aliceblue; font-size:20px;">DEMANDE DE COOPTATION</h4>
+        </div>
+        </div>
+    <div id="admin_container">
+        
+        <div class="action" *ngIf="poles">
+            <div class="dropaction">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary traiter" id="dropdownBasic1" ngbDropdownToggle [disabled]="isDisabled()">Gérer la cooptation</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+                    <a class="dropdown-item text-black status" *ngFor="let status of cooptationHistory" (click)="open('valider',coopId,status.id,status.status)" >
+                      {{status.status}}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <mat-tab-group dynamicHeight *ngIf="poles">
+        <mat-tab label="Identité et contact" >
+            <ng-template mat-tab-label >
+               <h5>Identité et contact</h5> 
+                <i *ngIf="firstForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+                <app-view-identity-coopted  [FileName]="FileName" [angForm] = "firstForm" [saveClicked]="saveClicked" (newItemEvent) = "getUplodedFile($event)" (ItemEvent) = "getCivility($event)" ></app-view-identity-coopted>
+        </mat-tab>
+        <mat-tab label="Information du coopté">
+            <ng-template mat-tab-label>
+                <h5>Information du coopté</h5>
+               
+                <i *ngIf="secondForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+            <app-view-information-coopte [cooptationForm] = "secondForm" [poles]="poles" [saveClicked]="saveClicked" ></app-view-information-coopte>
+        </mat-tab>
+        <mat-tab label="Mon premier entretien">
+            <ng-template mat-tab-label>
+                <h5>Mon premier entretien</h5>
+               
+                <i *ngIf="thirdForm.invalid && saveClicked" class="bi bi-exclamation-circle-fill" style="color:red; font-size:medium;"></i>
+              </ng-template>
+            <app-view-first-interview  [angForm] = "thirdForm" [saveClicked]="saveClicked"  (fieldActivitiesEvent) ="getFieldActivities($event)" (keyValuesEvent) ="getKeyValues($event)" (valuesEvent)="getValues($event)"  ></app-view-first-interview>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+
+    <ngx-alerts></ngx-alerts>
+
+    
+    
+   
+
+ 
+
+
+
+
+
+
+
+

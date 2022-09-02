@@ -1,0 +1,352 @@
+.icon {
+    margin: auto;
+    position: relative;
+    color: rgb(101, 103, 105);
+    margin-right: 0rem;
+    width: 100px;
+    height: 100px;
+}
+.icon i {
+    font-size: 38px;
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+.header{
+    padding-left:3.5rem !important;
+    height: 80px !important;
+    justify-content: space-around !important;
+}
+.header-right .header-profile>a.nav-link {
+    border: none !important;
+    margin-left: none !important;
+    padding-left: none !important;
+    }
+.search{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    color: white !important;
+    margin-right: 5rem !important;
+    height:42px !important;
+}
+.search-tool {
+    height: 40px !important;
+}
+.h1{
+    height: 80px !important;
+    
+}
+.logo-talan{
+margin-right: 10rem;
+}
+.searchresponsive{display: none;}
+
+.nameBlue{
+    background-color: #006dbf;
+    color: white;
+}
+
+  .nameBlue:hover,
+  .nameBlue:focus {  
+    text-decoration: none;
+    background-color: #006dbf;
+    color: white;  
+  }
+
+  @media only screen and (max-width: 1200px) {
+    
+    .searchresponsive {
+        display: block;
+        font-size: 38px;
+    }
+    .navbar-nav .header-right {
+        width: 50% !important;
+        margin: none !important;
+    }
+    .logo-talan {
+        margin-right: 0.5rem;
+    }
+    .header {
+        padding-left: 3rem !important;
+        height: 80px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .date {
+        width: 150px !important;
+    }
+    .dropdown-menu-right {
+        right: auto;
+        left: 0;
+    }
+    .icon {
+        margin-right: 1rem;
+        width: 60px;
+        height: 60px;
+    }
+    .icon i {
+        font-size: 28px;
+    }
+    .search {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        color: white !important;
+        margin-right: none !important;
+        width: 100px !important;
+    }
+    .search-tool {
+        height: 40px !important;
+    }
+    .h1 {
+        height: 80px !important;
+        margin-left: 0.25rem !important;
+    }
+    .logo-talan .me-2 {
+        margin-right: none !important;
+        height: 60% !important;
+        width: 60% !important;
+    }
+    .logo-talan {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        width: 150px !important;
+    }
+    span{
+        font-size: small;
+    }
+        .header-right .notification_dropdown .searchresponsive .nav-link {
+            padding: 5px;
+        }
+  }
+  .icon .bi-search{font-size: 25px;}
+  .header-right .notification_dropdown .nav-link {
+      padding: 8px;
+  }
+  .notification_dropdown .dropdown-menu-right {
+    min-width: 200px;
+    padding:  0rem !important;
+
+}
+   .search-area .input-group-append .input-group-text {
+       height: 39px;
+   }
+
+@media screen and (max-width: 1024px) {
+
+    .searchresponsive {
+            display: block;
+            font-size: 38px;
+        }
+    .navbar-nav .header-right {
+        width: 50% !important;
+        margin: none !important;
+    }
+    .logo-talan {
+        margin-right: 0.5rem;
+    }
+    .header {
+        padding-left: 2.7rem !important;
+        height: 80px !important;
+        justify-content: center !important;
+    }
+
+    .date {
+        width: 200px !important;
+    }
+    h6 {
+        font-size: small !important;
+        width: 120px !important;
+    }
+    h5 {
+        font-size: small !important;
+        width: 120px !important;
+    }
+    .dropdown-menu-right {
+        right: auto;
+        left: 0;
+    }
+    .icon {
+        margin-right: 0.7rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon i {
+        font-size: 28px;
+    }
+    .search {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        color: white !important;
+        margin-right: none !important;
+        width: 100px !important;
+    }
+    .search-tool {
+        height: 40px !important;
+    }
+
+    .h1 {
+        height: 80px !important;
+            margin-left: 0.25rem !important;
+    }
+
+        .logo-talan .me-2 {
+            margin-right: none !important;
+            height: 60% !important;
+            width: 60% !important;
+        }
+        .logo-talan {
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+            width: 150px !important;
+        } 
+    }
+@media screen and (max-width: 768px) {
+            .searchresponsive {
+                    display: block;
+                    font-size: 25px;
+                    width: 70px !important;
+                }
+    .navbar-nav .header-right {
+        width: 50% !important;
+        margin: none !important;
+    }
+    .logo-talan {
+        margin-right: 0.5rem;
+    }
+    .header {
+        padding-left: 2.9rem !important;
+        height: 80px !important;
+        justify-content: center !important;
+    }
+    .date {
+        width: 150px !important;
+    }
+    h6 {
+        font-size: x-small !important;
+        width: 100px !important;
+    }
+    h5 {
+        font-size: x-small !important;
+        width: 100px !important;
+    }
+    .dropdown-menu-right {
+        right: auto;
+        left: 0;
+    }
+    .icon {
+        margin-right: 0.7rem;
+        width: 60px;
+        height: 60px;
+    }
+    .icon i {
+        font-size: 28px;
+    }
+    .search {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        color: white !important;
+        margin-right: none !important;
+        width: 100px !important;
+    }
+    .search-tool {
+        height: 40px !important;
+    }
+    .h1 {
+        height: 80px !important;
+            margin-left: 0.25rem !important;
+    }
+        .logo-talan .me-2 {
+            margin-right: none !important;
+            height: 50% !important;
+            width: 50% !important;
+        }
+        .logo-talan {
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+        width: 150px !important;
+        }       
+}
+@media screen and (max-width: 425px) {
+        .searchresponsive {
+                display: block;
+                font-size: 38px;
+                width:70px !important;
+            }
+    .navbar-nav .header-right{
+        width:50% !important;
+        margin:none !important;
+    }    
+    .header {
+        padding-left: 1.9rem !important;
+        height: 80px !important;
+        justify-content: center !important;
+    }
+    .date {
+        width: 80px !important; 
+    }
+    .input-group .search-area .d-xl-inline-flex .d-none .search {
+        width:100px !important;
+    }
+    h6 {
+        font-size: x-small !important;
+        width: 70px !important;
+    }
+
+    h5 {
+        font-size: x-small !important;
+        width: 70px !important;
+    }
+
+    .icon {
+        margin-right: 0.4rem;
+        width: 60px;
+        height: 60px;
+    }
+    .icon i {
+        font-size: 28px;
+    }
+    .search {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        color: white !important;
+        margin-right: none !important;
+        width: 100px !important;
+    }
+         .search-area {
+             width: 200px;
+         }
+         .search-area .input-group-append .input-group-text i {
+             font-size: 18px;
+         }
+         .search-area .input-group-append .input-group-text {
+             height: 35px;
+         }
+    .search-tool {
+        height: 40px !important;
+    }
+
+    .h1 {
+        height: 80px !important;
+        margin-left:0.25rem !important;
+    }
+   .header-left .logo-talan {
+       margin-right: 0.5rem;
+       margin-left: 0.5rem;
+       width: 70px !important;
+   }
+    .logo-talan .me-2 {
+        margin-right: none !important;
+        height:40% !important;
+        width: 40% !important;
+       margin-left:0.5rem !important ;
+    }
+   .logo-talan {
+       margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        width: 100px !important;
+   }
+         .dropdown-menu-right {
+             right: 0;
+             left: auto;
+         }
+         .show{
+            width: 50px !important;
+         }
+}

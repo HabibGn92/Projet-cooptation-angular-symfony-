@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title" > Workflow</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')"
+     >
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div *ngIf="!cooptationHistory" class="spinner-border" role="status" style=" margin-left:230px">
+        <span class="sr-only" style="margin-top:60px ;">Loading...</span>
+    </div>
+    <div class="container-fluid">
+        <div class="widget-timeline-icon" *ngIf="cooptationHistory" >
+            <ul class="timeline">
+                <li *ngFor="let item of  cooptationHistory " class="liste">
+                    <div [ngStyle]="{'background-color':getTheColor(item.status)}" class="dots">
+                    </div>
+                    <a class="timeline-panel text-muted" href="#" style="padding: 0px 0px 30px 20px;"
+                        [ngStyle]="{'border-left': (item === cooptationHistory[cooptationHistory.length-1] ) ? 'none' :  '4px solid lightgrey'}">
+                        <p class="mb-2 mt-0 status">
+                            {{item.status}}</p>
+                        <p class="fs-14 mb-0 date">
+                            {{item.date | date:'mediumDate' }}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

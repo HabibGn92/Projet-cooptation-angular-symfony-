@@ -1,0 +1,119 @@
+<div class="col-xl-12 col-lg-12">
+        <div class="card-body">
+            <div class="basic-form">
+                <form [formGroup]="cooptationForm">
+                
+                    <div class="form-row">
+                        <div class="col-lg-2 col-form-label">
+                            <label>Lien avec le coopté </label>
+                            <span class="text-danger">*</span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select class="form-control default-select"  formControlName="link">
+                                <option value="Amitié">Amitié</option>
+                                <option value="Familial">Familial</option>
+                                <option value="Professionnel">Professionnel</option>
+                                <option value="Réseaux sociaux">Réseaux sociaux</option>
+                            </select> 
+                            <div *ngIf="cooptationForm.controls['link'].invalid && (cooptationForm.controls['link'].dirty || cooptationForm.controls['link'].touched || saveClicked)" 
+                            class="text-danger fs-13 mt-1">
+                                <div *ngIf="cooptationForm.controls['link'].errors">
+                                    Champ obligatoire
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-form-label">
+                        <label>Entité du coopté </label>
+                            <span class="text-danger">*</span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select class="form-control default-select" (change)="OnSelect($event.target)" formControlName="coopted_entity">
+                                <option   value="" >--choisir une entité--</option>
+                                <option  *ngFor ="let cop of CooptedEntityTable" value={{cop.id}} >{{cop.name}}</option>
+                            </select>
+                            <div *ngIf="cooptationForm.controls['coopted_entity'].invalid && (cooptationForm.controls['coopted_entity'].dirty || cooptationForm.controls['coopted_entity'].touched || saveClicked)" 
+                            class="text-danger fs-13 mt-1">
+                                <div *ngIf="cooptationForm.controls['coopted_entity'].errors">
+                                    Champ obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="form-row">
+                        <div class="col-lg-2 col-form-label">
+                            <label>Date 1ère expérience </label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="date"  class="resposiveInput form-control " formControlName="firstExperienceDate">
+                        </div>
+                    
+                        <div class="col-lg-2 col-form-label">
+                            <label>Pôle</label>
+                            <span class="text-danger">*</span>
+                        </div>
+                        <div class="form-group col-md-4">
+                                <select class="form-control default-select" formControlName="departement">
+                                    <option   value="" selected="selected" >--choisir un pôle--</option>
+                                    <option  *ngFor ="let dep of poles " value="{{dep.id}}"  >{{dep.name}}</option>
+                                </select>
+                                <div *ngIf="cooptationForm.controls['departement'].invalid && (cooptationForm.controls['departement'].dirty || cooptationForm.controls['departement'].touched || saveClicked)" 
+                                class="text-danger fs-13 mt-1">
+                                    <div *ngIf="cooptationForm.controls['departement'].errors">
+                                        Champ obligatoire
+                                    </div>
+                                </div> 
+                        </div>
+                    </div>
+                    
+                    <div class="form-row nomargin">
+                        <div class="col-lg-2 col-form-label secondFormLabel">
+                            <label>Expérience professionnelle</label>
+                        </div>
+                        <div class="form-group col-md-4 secondForm">
+                            <input type="text" class="form-control resposiveInput"  formControlName="professionalExperience" >
+                        </div>
+                        <div class="col-lg-2 col-form-label secondFormLabel">
+                            <label>Date de candidature</label>
+                        </div>
+
+                        <div class="form-group col-md-4 secondForm">
+                            <input type="date"  class="form-control resposiveInput" formControlName="applicationDate">
+                        </div>
+                        <div class="col-lg-2 col-form-label secondFormLabel ">
+                            <label>Poste actuel</label>
+                        </div>
+                        <div class="form-group col-md-4 secondForm">
+                            <input type="text" class="form-control resposiveInput" formControlName="currentPosition">
+                        </div>
+                        <div class="col-lg-2 col-form-label secondFormLabel">
+                            <label>Date de disponibilité</label>
+                        </div>
+                        <div class="form-group col-md-4 secondForm">
+                            <select class="form-control default-select" formControlName="DisponibilityDate">
+                                <option value="Dans un mois">Dans un mois</option>
+                                <option value="Dans 2 mois">Dans 2 mois</option>
+                                <option value="Dans 3 mois">Dans 3 mois</option>
+                                <option value="Dans une semaine">Dans une semaine</option>
+                                <option value="Dans 2 semaines">Dans 2 semaines</option>   
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="offset-md-6 col-lg-2 col-form-label">
+                            <label>Souhaits géographiques</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <select class="form-control default-select" formControlName="geographicalWishes">
+                                <option value="">Selectionner </option>
+                                <option value="France">France</option>
+                                <option value="Tunisie">Tunisie</option>
+                                <option value="Mexique">Mexique</option>
+                                <option value="Canada">Canada</option>   
+                            </select> 
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+</div>

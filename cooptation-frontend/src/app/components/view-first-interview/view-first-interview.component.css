@@ -1,0 +1,35 @@
+.form-row {
+    margin-left: 1.2rem;
+margin-right: 1.5rem;
+}
+.datedentretient{
+        margin-left: 3.5rem !important;
+}
+
+.secondForm {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.lined{
+    margin-bottom: 1rem !important;
+}
+.nomargin {
+    margin-bottom: 0rem !important;
+}
+
+.col-xl-7{
+    padding-right: 0% !important;
+}
+.col-lg-6{
+        padding-bottom: 1rem;
+}
+.welcome{margin-left: 25px !important;}
+.sdForm{
+    margin-top: 1rem;
+}
+
+@media screen and ( max-width:1200px){
+    .datedentretient {
+            margin-left: 0 !important;
+        }
+}
